@@ -8,4 +8,5 @@
 ## 기타 프로젝트 환경
 * mustache
 * Intellij
+## 프로젝트 메인 화면
 ![1](./images/1.png)
