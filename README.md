@@ -16,3 +16,6 @@
 ![1](./images/3.png)
 * web또는 kcms아래 layout을 제외한 곳에 작업한다.
 * 기본 확장자는 기존에 *.jsp가 아닌 *.mustache
+## 서버 실행방법
+![1](./images/4.png)
+![1](./images/5.png)
