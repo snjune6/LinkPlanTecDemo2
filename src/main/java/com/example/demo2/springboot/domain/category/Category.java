@@ -1,4 +1,4 @@
-package com.example.demo2.springboot.domain.Category;
+package com.example.demo2.springboot.domain.category;
 
 import com.example.demo2.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
@@ -16,7 +16,7 @@ public class Category extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private Long parentId;
 
     @Column(length = 100, nullable = false)
@@ -34,21 +34,17 @@ public class Category extends BaseTimeEntity {
     @Column(length = 1, nullable = false)
     private String delFl;
 
-    @Column(length = 1, nullable = false)
+    @Column(length = 1)
     private String menuFl;
 
-    @Column(nullable = false)
-    private Long orderBy;
 
     @Builder
-    public Category(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl, Long orderBy){
-        this.parentId = parentId;
+    public Category(String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl){
         this.categoryNm = categoryNm;
         this.categoryGb = categoryGb;
         this.categoryMemo = categoryMemo;
         this.useFl = useFl;
         this.delFl = delFl;
         this.menuFl = menuFl;
-        this.orderBy = orderBy;
     }
 }

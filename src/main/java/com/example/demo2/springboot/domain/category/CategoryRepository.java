@@ -1,4 +1,4 @@
-package com.example.demo2.springboot.domain.Category;
+package com.example.demo2.springboot.domain.category;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
