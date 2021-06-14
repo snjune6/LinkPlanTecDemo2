@@ -25,6 +25,7 @@ public class CategoryRepositoryTest {
     @Test
     public void 게시글저장_불러오기() {
         //given
+        Long parentId = 10L;
         String categoryNm = "카테고리이름";
         String categoryGb = "카테고리구분";
         String categoryMemo = "카테고리메모";
@@ -33,6 +34,7 @@ public class CategoryRepositoryTest {
         String menuFl = "Y";
 
         categoryRepository.save(Category.builder()
+                .parentId(parentId)
                 .categoryNm(categoryNm)
                 .categoryGb(categoryGb)
                 .categoryMemo(categoryMemo)
@@ -45,6 +47,7 @@ public class CategoryRepositoryTest {
 
         //then
         Category category = categoryList.get(0);
+        System.out.println(category.getCategoryNm());
         assertThat(category.getCategoryGb()).isEqualTo(categoryGb);
     }
 

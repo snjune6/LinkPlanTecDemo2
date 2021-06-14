@@ -39,7 +39,8 @@ public class Category extends BaseTimeEntity {
 
 
     @Builder
-    public Category(String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl){
+    public Category(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl){
+        this.parentId = parentId;
         this.categoryNm = categoryNm;
         this.categoryGb = categoryGb;
         this.categoryMemo = categoryMemo;
