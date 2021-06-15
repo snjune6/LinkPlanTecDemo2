@@ -29,7 +29,12 @@ public class IndexController {
         // 1레밸 메뉴
         model.addAttribute("dept1menu", menuService.dept1menu());
 
-        return "web/index/main";
+        return "web/index/index";
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "web/test/index";
     }
 
 }
