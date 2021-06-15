@@ -1,4 +1,4 @@
-package com.example.demo2.springboot.dto;
+package com.example.demo2.springboot.dto.category;
 
 import com.example.demo2.springboot.domain.category.Category;
 import lombok.Getter;
@@ -16,6 +16,7 @@ public class CategoryListResponseDto {
     private String useFl;
     private String delFl;
     private String menuFl;
+    private Long orderBy;
 
     private LocalDateTime modifiedDate;
     private LocalDateTime createdDate;
@@ -29,6 +30,7 @@ public class CategoryListResponseDto {
         this.useFl = entity.getUseFl();
         this.delFl = entity.getDelFl();
         this.menuFl = entity.getMenuFl();
+        this.orderBy = entity.getOrderBy();
         this.modifiedDate = entity.getModifiedDate();
         this.createdDate = entity.getCreatedDate();
     }

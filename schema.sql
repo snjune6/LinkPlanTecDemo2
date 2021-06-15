@@ -11,7 +11,28 @@ id bigint not null auto_increment
 , created_date timestamp
 , primary key (id));
 
-create table posts (id bigint not null auto_increment, created_date timestamp, modified_date timestamp, author varchar(255), content TEXT not null, title varchar(500) not null, primary key (id));
+create table menu (
+id bigint not null auto_increment
+, menu_id varchar(10) not null
+, menu_nm varchar(255) not null
+, menu_link varchar(255) not null
+, description TEXT not null
+, alt varchar(200) not null
+, use_at varchar(1) not null
+, del_at varchar(1) not null
+, order_by bigint not null
+, modified_date timestamp
+, created_date timestamp
+, primary key (id));
+
+create table posts (
+id bigint not null auto_increment
+, created_date timestamp
+, modified_date timestamp
+, author varchar(255)
+, content TEXT not null
+, title varchar(500) not null
+, primary key (id));
 
 CREATE TABLE SPRING_SESSION (
 	PRIMARY_ID CHAR(36) NOT NULL,

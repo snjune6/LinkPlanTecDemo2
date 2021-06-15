@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body th:fragment="main-body">
+    <th:block layout:fragment="content"></th:block>
+    <div id="m_recent_wrap">
+        <div class="m_recent">
+            <p class="m_recent_tit">
+                <img src="http://linkpt.cdn3.cafe24.com/images/m_recent_tit.jpg" alt="공지사항">
+            </p>
+            <p class="m_recent_con">
+                <a href="">공지사항 내용
+                    <span>2021.06.18</span>
+                </a>
+            </p>
+            <p class="m_recent_moreview">
+                <a href="/boardMain/board_notice.do">
+                    <img src="http://linkpt.cdn3.cafe24.com/images/m_recent_moreview.jpg" alt="전체보기">
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div id="copy_wrap">
+        <a href="#header" class="topBt over">
+            <span>TOP</span>
+        </a>
+
+        <div id="m_menu">
+            <ul class="m_menu">
+                <li>
+                    <a href="">이용약관</a>
+                <li>
+                <li>
+                    <a href="">개인정보처리방침</a>
+                <li>
+            </ul>
+        </div>
+
+        <div id="footer">
+            <div id="copy">
+                <div class="copy_con">
+                    <ul>
+                        <li>상호 : 링크플랜텍 / 대표 : 양승호 / 사업자등록번호 : 727-88-00952</li>
+                        <li>대표전화 : 052-256-8767 / 주소 : 울산광역시 남구 신두왕로 21 / 개인정보보호책임자 : 양승호</li>
+                        <li>Copyright (c) <b>링크플랜텍.</b> 2019. All rights reserved.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    $(function(){
+        /* top 버튼 */
+        // Fakes the loading setting a timeout
+        setTimeout(function () {
+            $('body').addClass('loaded');
+        }, 400);
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > $(window).height() * 0.2) {
+                $('.topBt').addClass('over');
+            } else {
+                $('.topBt').removeClass('over');
+            }
+        });
+
+        //Click event to scroll to top
+        $('.topBt').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300);
+            return false;
+        });
+     });
+    </script>
+</body>
+</html>

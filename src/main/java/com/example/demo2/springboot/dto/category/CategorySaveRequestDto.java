@@ -1,11 +1,13 @@
-package com.example.demo2.springboot.dto;
+package com.example.demo2.springboot.dto.category;
 
 import com.example.demo2.springboot.domain.category.Category;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-public class CategoryRequestDto {
+@NoArgsConstructor
+public class CategorySaveRequestDto {
 
     private Long parentId;
     private String categoryNm;
@@ -15,48 +17,29 @@ public class CategoryRequestDto {
     private String delFl;
     private String menuFl;
 
-    @Builder
-    public CategoryRequestDto(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl) {
-        /*
-        this.parentId = parentId;
-        this.categoryNm = categoryNm;
-        this.categoryGB = categoryGb;
-        this.categoryMemo = categoryMemo;
-        this.useFl = useFl;
-        this.delFl = delFl;
-        this.menuFl = menuFl;
-         */
-        this.parentId = 10L;
-        this.categoryNm = "categoryNm";
-        this.categoryGb = "categoryGb";
-        this.categoryMemo = "categoryMemo";
-        this.useFl = "Y";
-        this.delFl = "Y";
-        this.menuFl = "Y";
-    }
 
     @Builder
-    public CategoryRequestDto() {
-        /*
-        this.parentId = parentId;
-        this.categoryNm = categoryNm;
-        this.categoryGB = categoryGb;
-        this.categoryMemo = categoryMemo;
-        this.useFl = useFl;
-        this.delFl = delFl;
-        this.menuFl = menuFl;
-         */
-        this.parentId = 10L;
+    public CategorySaveRequestDto(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl) {
+       /* this.parentId = 10L;
         this.categoryNm = "categoryNm";
         this.categoryGb = "categoryGb";
         this.categoryMemo = "categoryMemo";
         this.useFl = "Y";
         this.delFl = "Y";
         this.menuFl = "Y";
+        this.parentId = parentId;*/
+        this.parentId = parentId;
+        this.categoryNm = categoryNm;
+        this.categoryGb = categoryGb;
+        this.categoryMemo = categoryMemo;
+        this.useFl = useFl;
+        this.delFl = delFl;
+        this.menuFl = menuFl;
     }
 
     public Category toEntity() {
         return Category.builder()
+                .parentId(parentId)
                 .categoryNm(categoryNm)
                 .categoryGb(categoryGb)
                 .categoryMemo(categoryMemo)
