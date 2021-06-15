@@ -1,5 +1,6 @@
 package com.example.demo2.springboot.web;
 
+import com.example.demo2.springboot.dto.category.CategoryRequestDto;
 import com.example.demo2.springboot.web.service.CategoryService;
 import com.example.demo2.springboot.web.service.MenuService;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +29,8 @@ public class IndexController {
 
         // 1레밸 메뉴
         model.addAttribute("dept1menu", menuService.dept1menu());
+        // 카테고리 메뉴
+        model.addAttribute("categoryMenu", categoryService.selectCategoryStep());
 
         return "web/index/index";
     }

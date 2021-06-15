@@ -2,6 +2,7 @@ package com.example.demo2.springboot.web.service;
 
 import com.example.demo2.springboot.domain.category.CategoryRepository;
 import com.example.demo2.springboot.dto.category.CategoryListResponseDto;
+import com.example.demo2.springboot.dto.category.CategoryRequestDto;
 import com.example.demo2.springboot.dto.category.CategorySaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,15 @@ public class CategoryService {
     public List<CategoryListResponseDto> findAllDesc() {
         return categoryRepository
                 .findAll()
+                .stream()
+                .map(CategoryListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<CategoryListResponseDto> selectCategoryStep() {
+        return categoryRepository
+                .selectCategoryStep()
                 .stream()
                 .map(CategoryListResponseDto::new)
                 .collect(Collectors.toList());
