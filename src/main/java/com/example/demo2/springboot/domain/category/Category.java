@@ -37,9 +37,12 @@ public class Category extends BaseTimeEntity {
     @Column(length = 1)
     private String menuFl;
 
+    @Column
+    private Long orderBy;
+
 
     @Builder
-    public Category(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl){
+    public Category(Long parentId, String categoryNm, String categoryGb, String categoryMemo, String useFl, String delFl, String menuFl, Long orderBy){
         this.parentId = parentId;
         this.categoryNm = categoryNm;
         this.categoryGb = categoryGb;
@@ -47,5 +50,6 @@ public class Category extends BaseTimeEntity {
         this.useFl = useFl;
         this.delFl = delFl;
         this.menuFl = menuFl;
+        this.orderBy = orderBy;
     }
 }

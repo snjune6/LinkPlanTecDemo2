@@ -1,4 +1,16 @@
-create table category (id bigint not null auto_increment, created_date timestamp, modified_date timestamp, category_gb varchar(50) not null, category_memo varchar(255) not null, category_nm varchar(100) not null, del_fl varchar(1) not null, menu_fl varchar(1), parent_id bigint, use_fl varchar(1) not null, primary key (id));
+create table category (
+id bigint not null auto_increment
+, parent_id bigint
+, category_nm varchar(100) not null
+, category_gb varchar(50) not null
+, category_memo varchar(255) not null
+, use_fl varchar(1) not null
+, del_fl varchar(1) not null, menu_fl varchar(1)
+, order_by bigint
+, modified_date timestamp
+, created_date timestamp
+, primary key (id));
+
 create table posts (id bigint not null auto_increment, created_date timestamp, modified_date timestamp, author varchar(255), content TEXT not null, title varchar(500) not null, primary key (id));
 
 CREATE TABLE SPRING_SESSION (
